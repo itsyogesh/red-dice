@@ -1,0 +1,23 @@
+import path from 'path';
+
+export default {
+  devtools: 'eval-source-map',
+  entry: path.join(__dirname, '/app/index.js'),
+  output: {
+    path: '/'
+  },
+
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        include: path.join(__dirname, 'app'),
+        loaders: ["babel"]
+      }
+    ]
+  },
+
+  resolve: {
+    extensions: ['', '.js']
+  }
+}
