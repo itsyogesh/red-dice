@@ -1,0 +1,120 @@
+/* startup.css */
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+html,
+body {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  color: #6c6f73;
+}
+
+h1,h2,h3,h4,h5 {
+  color: #333;
+}
+
+h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.navbar {
+  padding: .7rem 1rem .7rem 1.4rem;
+}
+
+.btn-navbar {
+  color: rgba(255,255,255, .5);
+  background-color: transparent;
+  border-color: rgba(255,255,255, .5);
+}
+
+.btn-navbar:hover {
+  color: #0275d8;
+  background-color: #fff;
+}
+
+.navbar .active {
+  font-weight: bold;
+}
+
+.blockquote {
+  font-size: 1.6rem;
+  color: #333;
+  border: none;
+  padding: 0;
+}
+
+.blockquote-footer {
+  margin: 1rem 0 0;
+}
+
+#stage {
+  color: grey;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.jumbotron {
+  margin: 8rem 0;
+}
+
+#stage-caption {
+  font-size: 1.4rem;
+  font-weight: 400;
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#stage p {
+  color: #000;
+}
+
+.feature-content {
+  padding: 8rem 0;
+  overflow: hidden;
+}
+
+#feature-one {
+  background: #0f0f0f;
+  color: #ccc;
+}
+
+#feature-one h2 {
+  color: #eee;
+}
+
+.feature-dark {
+  background: #262F36;
+  color: white;
+}
+
+.feature-dark h2 {
+  color: white;
+}
+
+.feature-content img {
+  margin-bottom: -8rem;
+}
+
+/* Media queries */
+
+@media screen and ( min-width: 991px ) {
+
+  .feature-content {
+    display: flex;
+    align-items: center;
+  }
+
+}
