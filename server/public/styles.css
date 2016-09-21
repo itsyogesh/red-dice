@@ -69,6 +69,11 @@ img {
   margin: 8rem 0;
 }
 
+.signup-form {
+  margin: 6rem;
+  padding: 1.4rem;
+}
+
 #stage-caption {
   font-size: 1.4rem;
   font-weight: 400;
