@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import timezones from '../../data/timezones';
+import TextFieldGroup from '../common/TextFieldGroup';
 
 class SignupForm extends Component {
   constructor(props){
@@ -45,49 +46,39 @@ class SignupForm extends Component {
     })
     return (
       <form onSubmit={this.onSubmit}>
-        <div className={classNames("form-group", {"has-danger": errors.username})}>
-          <label className="col-form-label">Username</label>
-          <input
-            value={this.state.username}
-            onChange={this.onChange}
-            type="text"
-            name="username"
-            className={classNames("form-control", {"form-control-danger": errors.username})} />
-          {errors.username && <div className="form-control-feedback">{errors.username}</div>}
-        </div>
+        <TextFieldGroup
+          field="username"
+          value={this.state.username}
+          onChange={this.onChange}
+          error={errors.username}
+          label="Username"
+        />
+      
+        <TextFieldGroup
+          field="email"
+          value={this.state.email}
+          onChange={this.onChange}
+          error={errors.email}
+          label="Email"
+        />
 
-        <div className={classNames("form-group", {"has-danger": errors.email})}>
-          <label className="col-form-label">Email</label>
-          <input
-            value={this.state.email}
-            onChange={this.onChange}
-            type="text"
-            name="email"
-            className={classNames("form-control", {"form-control-danger": errors.email})} />
-          {errors.email && <div className="form-control-feedback">{errors.email}</div>}
-        </div>
+        <TextFieldGroup
+          field="password"
+          value={this.state.password}
+          onChange={this.onChange}
+          error={errors.password}
+          label="Password"
+          type="password"
+        />
 
-        <div className={classNames("form-group", {"has-danger": errors.password})}>
-          <label className="col-form-label">Password</label>
-          <input
-            value={this.state.password}
-            onChange={this.onChange}
-            type="password"
-            name="password"
-            className={classNames("form-control", {"form-control-danger": errors.password})} />
-          {errors.password && <div className="form-control-feedback">{errors.password}</div>}
-        </div>
-
-        <div className={classNames("form-group", {"has-danger": errors.passwordConfirmation})}>
-          <label className="col-form-label">Confirm Password</label>
-          <input
-            value={this.state.passwordConfirmation}
-            onChange={this.onChange}
-            type="password"
-            name="passwordConfirmation"
-            className={classNames("form-control", {"form-control-danger": errors.passwordConfirmation})} />
-          {errors.passwordConfirmation && <div className="form-control-feedback">{errors.passwordConfirmation}</div>}
-        </div>
+        <TextFieldGroup
+          field="passwordConfirmation"
+          value={this.state.passwordConfirmation}
+          onChange={this.onChange}
+          error={errors.passwordConfirmation}
+          label="Confirm Password"
+          type="password"
+        />
 
         <div className={classNames("form-group", {"has-danger": errors.timezone})}>
           <label className="col-form-label">Timezone</label>
