@@ -32,7 +32,9 @@ class SignupForm extends Component {
     e.preventDefault();
     this.setState({errors: {}, isLoading: true});
     this.props.userSignupRequest(this.state).then(
-      () => {},
+      () => {
+        this.context.router.push('/')
+      },
       ({ data }) => this.setState({ errors: data , isLoading: false})
     );
   }
@@ -53,7 +55,7 @@ class SignupForm extends Component {
           error={errors.username}
           label="Username"
         />
-      
+
         <TextFieldGroup
           field="email"
           value={this.state.email}
@@ -106,6 +108,10 @@ class SignupForm extends Component {
 
 SignupForm.propTypes = {
   userSignupRequest: PropTypes.func.isRequired
+}
+
+SignupForm.contextTypes = {
+  router: PropTypes.object.isRequired
 }
 
 export default SignupForm;
